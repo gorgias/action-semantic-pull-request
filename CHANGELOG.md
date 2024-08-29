@@ -1,5 +1,33 @@
 # Changelog
 
+## [5.5.3](https://github.com/amannn/action-semantic-pull-request/compare/v5.5.2...v5.5.3) (2024-06-28)
+
+
+### Bug Fixes
+
+* Bump `braces` dependency ([#269](https://github.com/amannn/action-semantic-pull-request/issues/269). by @EelcoLos) ([2d952a1](https://github.com/amannn/action-semantic-pull-request/commit/2d952a1bf90a6a7ab8f0293dc86f5fdf9acb1915))
+
+## [5.5.2](https://github.com/amannn/action-semantic-pull-request/compare/v5.5.1...v5.5.2) (2024-04-24)
+
+
+### Bug Fixes
+
+* Bump tar from 6.1.11 to 6.2.1 ([#262](https://github.com/amannn/action-semantic-pull-request/issues/262) by @EelcoLos) ([9a90d5a](https://github.com/amannn/action-semantic-pull-request/commit/9a90d5a5ac979326e3bb9272750cdd4f192ce24a))
+
+## [5.5.1](https://github.com/amannn/action-semantic-pull-request/compare/v5.5.0...v5.5.1) (2024-04-24)
+
+
+### Bug Fixes
+
+* Bump ip from 2.0.0 to 2.0.1 ([#263](https://github.com/amannn/action-semantic-pull-request/issues/263) by @EelcoLos) ([5e7e9ac](https://github.com/amannn/action-semantic-pull-request/commit/5e7e9acca3ddc6a9d7b640fe1f905c4fff131f4a))
+
+## [5.5.0](https://github.com/amannn/action-semantic-pull-request/compare/v5.4.0...v5.5.0) (2024-04-23)
+
+
+### Features
+
+* Add outputs for `type`, `scope` and `subject` ([#261](https://github.com/amannn/action-semantic-pull-request/issues/261) by [@bcaurel](https://github.com/bcaurel)) ([b05f5f6](https://github.com/amannn/action-semantic-pull-request/commit/b05f5f6423ef5cdfc7fdff00c4c10dd9a4f54aff))
+
 ## [5.4.0](https://github.com/amannn/action-semantic-pull-request/compare/v5.3.0...v5.4.0) (2023-11-03)
 
 
