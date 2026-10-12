@@ -1,14 +1,16 @@
-name: 'Publish major version'
+name: 'Tag release for latest major version'
 
 on:
   release:
     types: [published, edited]
 
 permissions:
-  deployments: write
+  contents: write
 
 jobs:
   actions-tagger:
     runs-on: ubuntu-latest
+    permissions:
+      deployments: write
     steps:
       - uses: Actions-R-Us/actions-tagger@v2

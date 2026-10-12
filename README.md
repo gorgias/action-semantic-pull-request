@@ -7,6 +7,7 @@ Used by: [Electron](https://github.com/electron/electron) · [Vite](https://gith
 ## Examples
 
 **Valid pull request titles:**
+
 - fix: Correct typo
 - feat: Add support for Node.js 18
 - refactor!: Drop support for Node.js 12
@@ -20,26 +21,25 @@ See [Conventional Commits](https://www.conventionalcommits.org/) for more exampl
 
 1. If your goal is to create squashed commits that will be used for automated releases, you'll want to configure your GitHub repository to [use the squash & merge strategy](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests) and tick the option "Default to PR title for squash merge commits".
 2. [Add the action](https://docs.github.com/en/actions/quickstart) with the following configuration:
+
 ```yml
-name: "Lint PR"
+name: 'Lint PR'
 
 on:
   pull_request_target:
     types:
       - opened
       - edited
-      - synchronize
       - reopened
-
-permissions:
-  pull-requests: read
 
 jobs:
   main:
     name: Validate PR title
     runs-on: gh-actions-small-runner-set
+    permissions:
+      pull-requests: read
     steps:
-      - uses: gorgias/action-semantic-pull-request@v5
+      - uses: gorgias/action-semantic-pull-request@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -63,10 +63,12 @@ feat(ui): Add `Button` component
 ```yml
         with:
           # Configure which types are allowed (newline-delimited).
+          # These are regex patterns auto-wrapped in `^ $`.
           # Default: https://github.com/commitizen/conventional-commit-types
           types: |
             fix
             feat
+            JIRA-\d+
           # Configure which scopes are allowed (newline-delimited).
           # These are regex patterns auto-wrapped in `^ $`.
           scopes: |
@@ -126,7 +128,7 @@ This will prevent the PR title from being validated, and pull request checks wil
 **Attention**: If you want to use the this feature, you need to grant the `pull-requests: write` permission to the GitHub Action. This is because the action will update the status of the PR to remain in a pending state while `[WIP]` is present in the PR title.
 
 ```yml
-name: "Lint PR"
+name: 'Lint PR'
 
 permissions:
   pull-requests: write
@@ -135,8 +137,10 @@ jobs:
   main:
     name: Validate PR title
     runs-on: gh-actions-small-runner-set
+    permissions:
+      pull-requests: read
     steps:
-      - uses: gorgias/action-semantic-pull-request@v5
+      - uses: gorgias/action-semantic-pull-request@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -175,15 +179,14 @@ There are two events that can be used as triggers for this action, each with dif
 <details>
 <summary>Example</summary>
 
-```yml
-name: "Lint PR"
+````yml
+name: 'Lint PR'
 
 on:
   pull_request_target:
     types:
       - opened
       - edited
-      - synchronize
 
 permissions:
   pull-requests: write
@@ -192,8 +195,10 @@ jobs:
   main:
     name: Validate PR title
     runs-on: gh-actions-small-runner-set
+    permissions:
+      pull-requests: read
     steps:
-      - uses: gorgias/action-semantic-pull-request@v5
+      - uses: gorgias/action-semantic-pull-request@v6
         id: lint_pr_title
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -221,6 +226,6 @@ jobs:
         with:
           header: pr-title-lint-error
           delete: true
-```
+````
 
 </details>
