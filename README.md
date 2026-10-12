@@ -35,7 +35,7 @@ on:
 jobs:
   main:
     name: Validate PR title
-    runs-on: gh-actions-small-runner-set
+    runs-on: gh-actions-0.5cpu1gb-runner-set
     permissions:
       pull-requests: read
     steps:
@@ -136,7 +136,7 @@ permissions:
 jobs:
   main:
     name: Validate PR title
-    runs-on: gh-actions-small-runner-set
+    runs-on: gh-actions-0.5cpu1gb-runner-set
     permissions:
       pull-requests: read
     steps:
@@ -194,7 +194,7 @@ permissions:
 jobs:
   main:
     name: Validate PR title
-    runs-on: gh-actions-small-runner-set
+    runs-on: gh-actions-0.5cpu1gb-runner-set
     permissions:
       pull-requests: read
     steps:

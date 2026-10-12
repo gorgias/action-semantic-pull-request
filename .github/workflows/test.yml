@@ -8,7 +8,7 @@ on:
 
 jobs:
   main:
-    runs-on: ubuntu-latest
+    runs-on: gh-actions-0.5cpu1gb-runner-set
     permissions:
       contents: read
     steps:
@@ -21,7 +21,7 @@ jobs:
       - run: pnpm lint && pnpm test
 
   dist:
-    runs-on: ubuntu-latest
+    runs-on: gh-actions-0.5cpu1gb-runner-set
     permissions:
       contents: read
     steps:
