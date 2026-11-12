@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   actions-tagger:
-    runs-on: ubuntu-24.04
+    runs-on: pr-1cpu2gb-runner-set
     permissions:
       contents: write
     steps:
